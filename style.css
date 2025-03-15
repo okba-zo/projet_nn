@@ -1,0 +1,533 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align:center;
+  background-color: #7162E1};
+
+header {
+  background-color: #7162E1;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Barre de navigation  */
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: right;
+  padding: 15px 30px;
+
+}
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    left: -220px; /* Initially hidden */
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+}
+
+
+.sidebar.active {
+    left: 0; /* Show when active */
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.sidebar-menu img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.logout {
+    color: red;
+    font-weight: bold;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f1f1f1;
+    margin-left: 260px; /* Prevent overlap */
+}
+
+.search-bar input {
+    width: 200px;
+    padding: 8px;
+}
+.profile {
+  width: 50px ;
+  height: 50px;
+  position: absolute;
+  top: 20px;  /* Adjust to move it lower/higher */
+  right:  50px; /* Moves it to the right */
+ 
+}
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background: gray;
+    border-radius: 50%;
+}
+
+/* Main Content */
+main {
+    margin: 0px; /* Prevent sidebar overlap */
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Icône du menu */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px 15px;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  position: absolute; /* Allows it to be placed anywhere */
+  top: 10px; /* Adjust to move it down from the top */
+  left: 10px; /* Adjust to move it from the left */
+}
+
+
+/* Barre latérale */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+/* Bouton de fermeture */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* Liste des liens */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 60px 0 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+.sidebar a:hover {
+  transform: translateY(-3px);
+}
+
+
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* Lien actif */
+.sidebar ul li a.active {
+  color: blue;
+}
+
+/* Pied de la barre */
+.sidebar-footer {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.sidebar-footer a {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+/* Bouton déconnexion */
+.sidebar-footer .logout {
+  color: red;
+}
+
+/* Affichage du menu */
+.sidebar.active {
+  left: 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.profile-icon {
+  position: right; /* Freely position it */
+  top: 10px; /* Distance from the top */
+  right: 10px; /* Moves it to the right */
+  width: 40px; /* Size of the icon */
+  height: 40px;
+  background-color: #ffffff; /* White background */
+  border-radius: 50%; /* Makes it a circle */
+  border: 2px solid #7162E1; /* Purple border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* SVG Icon inside */
+.profile-icon svg {
+  width: 2px;
+  height: 24px;
+  fill: #7162E1; /* Purple color */
+}
+
+
+main {
+  padding: 0px;
+}
+
+section {
+  background-color:#1A0495;
+  border-radius: 0px;
+  padding: 50px;
+  margin-bottom: 10px;
+}
+
+table {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid #9a999998;
+  padding: 8px;
+  text-align:center;
+}
+
+th {
+  background-color:#f2f2f2;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+ 
+
+  
+}
+
+.create {
+  background-color: #B9EAA7;
+  color: rgb(0, 0, 0);
+}
+
+.modify {
+  background-color: #D0C8FF;
+  color: rgb(0, 0, 0);
+}
+
+.delete {
+  background-color: #e86f6f;
+  color: rgb(9, 9, 9);
+}
+.corbeille {
+  position: absolute;
+  top: 1100px;  /* Adjust to move it lower/higher */
+  right:  110px; /* Moves it to the right */
+  background-color: #ffffff;
+  color: #1A0495;
+  border: 2px solid #1A0495;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  .blue-box {
+    position: relative; /* Ensures Corbeille is positioned inside */
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+}
+
+.corbeille:hover {
+  background-color: #1A0495;
+  color: #ffffff;
+}
+
+/* Section contact */
+.contact {
+  background: linear-gradient(to right, #6759CD, #342D67);
+  color: #ffffff;
+  padding: 2rem;
+}
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+}
+
+.example-2 .icon-content a:hover {
+  color: white;
+}
+
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}  
+.couleur{
+  color:  #D28C64;
+}
+
+
+.container-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partie-d{
+  flex: 0;
+  min-width: 300px;
+  margin: 1rem;
+}
+
+.partie-g{
+  flex: 1;
+  min-width: 300px;
+  margin: 1rem;
+  padding-right: 20%;
+}
+
+.gauche  {
+display: flex;
+justify-content:first baseline;
+  align-items: center;
+}
+
+
+.gauche img, footer {
+  width: 200px;
+  height: 150px;
+  color: white;
+}
+
+.down-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.photo-reseau {
+  width: 100%;
+  max-width: 200px;
+
+}
+
+footer {
+  text-align: start;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  width: auto;
+  height:auto ;
+}
+
+/* Responsive Design */
+@media (max-width: 1500px) {
+  .hero-text {
+      text-align: center;
+      padding-bottom: 5%;
+  }
+
+  .buttons {
+      justify-content: center;
+  }
+
+}
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: white;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .hero {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero-text {
+      text-align: center;
+  }
+
+
+  .buttons {
+      justify-content: center;
+  }
+
+  .container-contact {
+      flex-direction: column;
+      align-items: center;
+  }
+}
